@@ -8,6 +8,7 @@
   home.stateVersion = "24.05";
 
   home.packages = [
+    # from aqua
     pkgs.chezmoi
     pkgs.gh
     pkgs.neovim
