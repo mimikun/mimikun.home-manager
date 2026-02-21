@@ -12,6 +12,8 @@
     pkgs.chezmoi
     pkgs.gh
     pkgs.neovim
+    # NOTE: v1.8.1 very old :cry:
+    pkgs.ghq
   ];
 
   # Home Manager is pretty good at managing dotfiles.
