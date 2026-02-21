@@ -10,6 +10,7 @@
   home.packages = [
     pkgs.chezmoi
     pkgs.gh
+    pkgs.neovim
   ];
 
   # Home Manager is pretty good at managing dotfiles.
