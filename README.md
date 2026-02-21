@@ -1,5 +1,8 @@
 # mimikun's home-manager (standalone install, with flake)
 
+> [!NOTE] 
+> version is old
+
 ## First Goal
 
 - migrate from aqua
