@@ -13,6 +13,7 @@
     pkgs.neovim
     pkgs.ghq          
     pkgs.fzf         
+    # TODO: add some packages
   ];
 
   # Home Manager is pretty good at managing dotfiles.
