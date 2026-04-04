@@ -399,25 +399,64 @@ nixpkgsに未収録でも `buildRustPackage`（Rust）や `fetchurl`（配布バ
 
 ### home.nixの構造化
 
-パッケージ数が増えるため、カテゴリ別にリスト化する。
+パッケージ数が増えるため、カテゴリ別に `packages/` ディレクトリへ切り出す。
 
+```
+home-manager/
+├── flake.nix
+├── home.nix              # imports のみ + username/homeDirectory/stateVersion
+├── packages/
+│   ├── default.nix       # packages/ 配下を全てimport
+│   ├── cli.nix           # CLI Utilities
+│   ├── dev-tools.nix     # Development Tools
+│   ├── file-tools.nix    # File Tools
+│   ├── rust.nix          # Rust Toolchain Helpers
+│   └── runtimes.nix      # Language Runtimes (single version)
+├── files.nix             # home.file（dotfileシンボリンク）
+├── env.nix               # home.sessionVariables
+└── programs.nix          # programs.*
+```
+
+**home.nix（インポート専用）:**
 ```nix
-home.packages = with pkgs; [
-  # --- CLI Utilities ---
-  btop jq direnv fzf
+{ config, pkgs, ... }:
+{
+  imports = [
+    ./packages
+    ./files.nix
+    ./env.nix
+    ./programs.nix
+  ];
 
-  # --- Development Tools ---
-  gh ghq delta gitui
+  home.username = "mimikun";
+  home.homeDirectory = "/home/mimikun";
+  home.stateVersion = "24.05"; # NOTE: DO NOT CHANGE IT!!!
+  programs.home-manager.enable = true;
+}
+```
 
-  # --- File Tools ---
-  bat eza fd ripgrep
+**packages/default.nix（パッケージディレクトリのエントリポイント）:**
+```nix
+{ ... }:
+{
+  imports = [
+    ./cli.nix
+    ./dev-tools.nix
+    ./file-tools.nix
+    ./rust.nix
+    ./runtimes.nix
+  ];
+}
+```
 
-  # --- Rust Toolchain Helpers ---
-  cargo-nextest cargo-edit
-
-  # --- Language Runtimes (single version) ---
-  erlang ruby lua5_1
-];
+**packages/cli.nix（例）:**
+```nix
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    btop jq direnv fzf
+  ];
+}
 ```
 
 ### 段階的移行のすすめ方

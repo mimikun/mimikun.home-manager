@@ -36,8 +36,15 @@ task deleb           # Delete all patch* branches
 ## Architecture
 
 - **`flake.nix`** — Flake inputs (nixpkgs unstable + home-manager) and output defining the `mimikun` homeConfiguration.
-- **`home.nix`** — The sole configuration module: packages, dotfiles, session variables, and program options.
+- **`home.nix`** — Top-level module that imports all category-specific modules. Should contain only `imports`, `home.username`, `home.homeDirectory`, `home.stateVersion`, and `programs.home-manager.enable`.
+- **`packages/default.nix`** — Imports all files under `packages/`.
+- **`packages/*.nix`** — `home.packages` split by category (e.g. `cli.nix`, `dev-tools.nix`, `file-tools.nix`).
+- **`files.nix`** — `home.file` dotfile symlink definitions.
+- **`env.nix`** — `home.sessionVariables` environment variables.
+- **`programs.nix`** — `programs.*` configuration options.
 - **`flake.lock`** — Pinned input revisions; update with `nix flake update`.
+
+When adding new packages, place them in the appropriate file under `packages/`. When adding other settings, use the corresponding top-level file rather than `home.nix` directly.
 
 ## Important Constraints
 
