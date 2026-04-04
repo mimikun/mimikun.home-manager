@@ -52,3 +52,24 @@ When adding new packages, place them in the appropriate file under `packages/`. 
 - The branch workflow uses short-lived `patch-YYYYMMDD` branches off `master`; use `task pab` to create one before making changes.
 - Currently only works on the `Azusa` machine; `Wakamo` (NixOS/ArchLinux) and `Izuna` hosts are not yet functional.
 
+## Commit Standards
+
+When Claude Code performs work that results in a commit, the commit message **must** include a Co-Author trailer identifying the model used:
+
+| Model | Trailer |
+|---|---|
+| Claude Opus 4.6 | `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>` |
+| Claude Sonnet 4.6 | `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>` |
+| Claude Haiku 4.5 | `Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>` |
+
+Use the trailer that matches the model currently in use. Example:
+
+```bash
+git commit -m "$(cat <<'EOF'
+feat(packages): add ripgrep to cli tools
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+EOF
+)"
+```
+
