@@ -76,3 +76,11 @@ tasks:
       - git switch -c "patch-{{.TODAY}}"
     silent: true
 
+  apply:
+    desc: Apply home-manager configuration
+    aliases:
+      - switch
+    cmds:
+      - home-manager switch --flake .#mimikun
+    silent: true
+
