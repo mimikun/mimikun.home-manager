@@ -76,3 +76,10 @@ tasks:
       - git switch -c "patch-{{.TODAY}}"
     silent: true
 
+  update:
+    desc: Update flake inputs and apply home-manager configuration
+    cmds:
+      - nix flake update
+      - home-manager switch --flake .#mimikun
+    silent: true
+
