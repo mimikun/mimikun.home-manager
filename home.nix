@@ -13,6 +13,7 @@
     pkgs.neovim
     pkgs.ghq          
     pkgs.fzf         
+    pkgs.go-task
     # TODO: add some packages
   ];
 
