@@ -19,7 +19,11 @@
     # Linting & formatting
     shellcheck
     hadolint
-    go-tools  # includes staticcheck
+    go-tools  # dominikh/go-tools: staticcheck
+    gotools   # golang/tools: gorename etc.
+    errcheck
+    checkmake
+    ls-lint
     uv
     ruff
 
@@ -29,8 +33,35 @@
 
     # Load testing
     vegeta
+    k6
 
     # Languages
     gleam
+
+    # Issue & change tracking
+    git-bug
+    jjui
+    diffnav
+
+    # Secrets & environment
+    bitwarden-cli
+    dotenvx
+
+    # Container & cluster security
+    kubescape
+    copacetic
+
+    # Databases
+    dblab
+
+    # Networking & hosts
+    hostctl
+
+    # Build & shell tooling
+    bunster
+
+    # Misc developer tools
+    horcrux
+    twitch-cli
   ];
 }
