@@ -9,8 +9,8 @@
     # Fuzzy finder
     fzf
 
-    # Editor
-    neovim
+    # Task runner
+    go-task
 
     # Security scanning
     trivy
