@@ -64,5 +64,15 @@
     # Misc developer tools
     horcrux
     twitch-cli
+
+    # From overlays/prebuilt-github-tools.nix
+    aqua-registry-tool  # installs as argd
+    reminder-lint
+    cmdx
+    gaze
+    dagu
+    godap
+    pkgx
+    termkit-gama        # GitHub Actions TUI, installs as gama
   ];
 }
