@@ -58,6 +58,7 @@
 
     # Build & shell tooling
     bunster
+    powershell  # pinned to 7.6.5 by overlays/powershell.nix
 
     # Misc developer tools
     horcrux
