@@ -35,7 +35,8 @@ task deleb           # Delete all patch* branches
 
 ## Architecture
 
-- **`flake.nix`** — Flake inputs (nixpkgs unstable + home-manager) and output defining the `mimikun` homeConfiguration.
+- **`flake.nix`** — Flake inputs (nixpkgs unstable + home-manager) and output defining the `mimikun` homeConfiguration. `pkgs` is built with `import nixpkgs` rather than `legacyPackages`, so that overlays apply.
+- **`overlays/`** — One overlay per file, listed in `overlays/default.nix`. Each file records why it exists and the condition under which it should be deleted. Reach for an overlay only when nixpkgs cannot express the need; a version pin is the usual case.
 - **`home.nix`** — Top-level module that imports all category-specific modules. Should contain only `imports`, `home.username`, `home.homeDirectory`, `home.stateVersion`, and `programs.home-manager.enable`.
 - **`packages/default.nix`** — Imports all files under `packages/`.
 - **`packages/*.nix`** — `home.packages` split by category (e.g. `cli.nix`, `dev-tools.nix`, `file-tools.nix`).
