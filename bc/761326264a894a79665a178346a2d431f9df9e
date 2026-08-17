@@ -1,0 +1,21 @@
+overlays/powershell.nix
+  s_9653ba170c092a::t_270068a3d5b355 1,3-6,8-35,37-48,50-62
+packages/dev-tools.nix
+  s_9653ba170c092a::t_988e43f93a1601 61-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "bc761326264a894a79665a178346a2d431f9df9e",
+  "prompts": {},
+  "sessions": {
+    "s_9653ba170c092a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b1f642e0-0f13-4825-a0a3-b064805d8927",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}
