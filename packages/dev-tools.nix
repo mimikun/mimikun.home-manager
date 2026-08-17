@@ -58,7 +58,8 @@
 
     # Build & shell tooling
     bunster
-    powershell  # pinned to 7.6.5 by overlays/powershell.nix
+    powershell     # pinned to 7.6.5 by overlays/powershell.nix
+    pwsh-unstable  # preview build, same overlay
 
     # Misc developer tools
     horcrux
