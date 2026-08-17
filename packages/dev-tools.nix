@@ -20,7 +20,6 @@
     shellcheck
     hadolint
     go-tools  # dominikh/go-tools: staticcheck
-    gotools   # golang/tools: gorename etc.
     errcheck
     checkmake
     ls-lint
