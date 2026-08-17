@@ -2,4 +2,5 @@
 # function and carries the reason it exists plus the condition for deleting it.
 [
   (import ./powershell.nix)
+  (import ./prebuilt-github-tools.nix)
 ]

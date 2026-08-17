@@ -41,5 +41,11 @@
 
     # Dependency checks
     has
+
+    # From overlays/prebuilt-github-tools.nix
+    jfryy-qq       # jq-style querying, installs as qq
+    sheepla-pingu  # ping with a penguin, installs as pingu
+    misskey-cli
+    chmod-cli
   ];
 }
