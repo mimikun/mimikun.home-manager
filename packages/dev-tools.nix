@@ -15,6 +15,10 @@
     # Security scanning
     trivy
     gitleaks
+    zizmor  # finds security issues in GitHub Actions workflows
+
+    # Test runners
+    cargo-nextest
 
     # Linting & formatting
     shellcheck
@@ -52,6 +56,7 @@
 
     # Databases
     dblab
+    rainfrog
 
     # Networking & hosts
     hostctl
@@ -62,6 +67,7 @@
     pwsh-unstable  # preview build, same overlay
 
     # Misc developer tools
+    aube  # jdx's Node.js package manager
     horcrux
     twitch-cli
 

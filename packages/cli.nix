@@ -17,6 +17,7 @@
     gomi
     ncdu
     superfile
+    yazi  # covers the yazi-cli and yazi-fm crates
 
     # Search & navigation
     zf
