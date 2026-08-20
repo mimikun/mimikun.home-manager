@@ -65,6 +65,15 @@
     horcrux
     twitch-cli
 
+    # Migrated from pnpm global (2026-08-20)
+    ast-grep     # npm: @ast-grep/cli
+    bats         # npm: bats
+    prettier     # npm: prettier
+    prek         # npm: @j178/prek
+    httpyac      # npm: httpyac
+    mermaid-cli  # npm: @mermaid-js/mermaid-cli, installs as mmdc
+    codegraph    # npm: @colbymchenry/codegraph
+
     # From overlays/prebuilt-github-tools.nix
     aqua-registry-tool  # installs as argd
     reminder-lint
