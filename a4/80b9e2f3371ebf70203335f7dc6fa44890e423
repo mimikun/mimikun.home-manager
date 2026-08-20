@@ -1,0 +1,19 @@
+CLAUDE.md
+  s_967317a0dbd8b0::t_e0b380aa336d3c 36-38,56-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "a480b9e2f3371ebf70203335f7dc6fa44890e423",
+  "prompts": {},
+  "sessions": {
+    "s_967317a0dbd8b0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "80fbfb5d-5db8-48a2-9e2b-162e31f87f32",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}
