@@ -33,6 +33,9 @@ task morning-routine # fetch + delete old patch branches + pull + new patch bran
 task deleb           # Delete all patch* branches
 ```
 
+`pab`, `morning-routine` and `deleb` are the repo owner's own manual tools.
+Agents must not use them — see the branch rule below.
+
 ## Architecture
 
 - **`flake.nix`** — Flake inputs (nixpkgs unstable + home-manager) and output defining the `mimikun` homeConfiguration. `pkgs` is built with `import nixpkgs` rather than `legacyPackages`, so that overlays apply.
@@ -50,7 +53,8 @@ When adding new packages, place them in the appropriate file under `packages/`. 
 ## Important Constraints
 
 - **`home.stateVersion = "24.05"` must never be changed** — this controls migration behavior and changing it can break the activation.
-- The branch workflow uses short-lived `patch-YYYYMMDD` branches off `master`; use `task pab` to create one before making changes.
+- `patch-YYYYMMDD` branches belong to the repo owner's own manual workflow (`task pab`, `task morning-routine`). **Agents must not create, reuse, or delete them**, and must not run those tasks.
+- Agents name branches after the Conventional Commits type of the work: `feat/<topic>`, `fix/<topic>`, `docs/<topic>`, `chore/<topic>`, `refactor/<topic>`. Branch off an up-to-date `master`.
 - Currently only works on the `Azusa` machine; `Wakamo` (NixOS/ArchLinux) and `Izuna` hosts are not yet functional.
 
 ## Commit Standards
