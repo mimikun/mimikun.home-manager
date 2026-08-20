@@ -5,6 +5,7 @@
     chezmoi
     gh
     ghq
+    hk  # jdx/hk: git hook manager
 
     # Fuzzy finder
     fzf
@@ -29,6 +30,7 @@
     ls-lint
     uv
     ruff
+    rumdl  # markdown linter and formatter
 
     # Kubernetes
     kubectx
@@ -45,6 +47,7 @@
     git-bug
     jjui
     diffnav
+    tuicr  # review AI-generated diffs like a pull request
 
     # Secrets & environment
     bitwarden-cli
@@ -53,6 +56,7 @@
     # Container & cluster security
     kubescape
     copacetic
+    nono  # kernel-enforced sandbox for AI agents; the nono-cli crate
 
     # Databases
     dblab
@@ -67,7 +71,8 @@
     pwsh-unstable  # preview build, same overlay
 
     # Misc developer tools
-    aube  # jdx's Node.js package manager
+    aube         # jdx's Node.js package manager
+    cargo-about  # lists the licenses of a crate's dependencies
     horcrux
     twitch-cli
 
