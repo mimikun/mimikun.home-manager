@@ -39,6 +39,10 @@
     # Task tracking
     dstask
 
+    # Typing practice. Moved off cargo on 2026-08-20: building it took 7h51m of
+    # a 10h vup run, 78% of the total, and was killed rather than finished.
+    gittype
+
     # Dependency checks
     has
 
