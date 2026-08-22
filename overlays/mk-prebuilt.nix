@@ -24,6 +24,9 @@ prev:
   subdir ? null,
   # the asset is the binary itself, not an archive
   bare ? false,
+  # extra shared libraries the asset links against. Assets built against musl
+  # are static and need none; the gnu ones usually want at least openssl.
+  libs ? [ ],
   description,
   homepage,
 }:
@@ -40,7 +43,7 @@ prev.stdenvNoCC.mkDerivation (
     # dynamically linked ones need it.
     nativeBuildInputs =
       [ prev.autoPatchelfHook ] ++ lib.optional (lib.hasSuffix ".zip" url) prev.unzip;
-    buildInputs = [ prev.stdenv.cc.cc.lib ];
+    buildInputs = [ prev.stdenv.cc.cc.lib ] ++ libs;
 
     installPhase = ''
       runHook preInstall
