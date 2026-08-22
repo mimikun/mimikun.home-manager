@@ -32,6 +32,25 @@
     ruff
     rumdl  # markdown linter and formatter
 
+    # Moved off `cargo install` on 2026-08-22. Every src owner/repo was checked
+    # against what crates.io lists for the crate, and every version matched what
+    # cargo had installed. treefmt is deliberately absent: nixpkgs only carries
+    # the Go rewrite (2.5.0) while cargo has the Rust original (0.6.1), so that
+    # one is a major rewrite to adopt, not a move.
+    typos           # typos-cli crate
+    taplo           # taplo-cli crate, TOML toolkit
+    committed       # lints commit messages against conventional commits
+    commitlint-rs   # installs as `commitlint`
+    selene          # Lua linter
+    stylua          # Lua formatter
+    shellharden     # corrective bash syntax highlighter
+    lychee          # link checker
+    pylyzer         # Python static analyzer
+    bacon           # background cargo check
+    emmylua-check   # emmylua_check crate
+    emmylua-ls      # emmylua_ls crate
+    emmylua-doc-cli # emmylua_doc_cli crate
+
     # Kubernetes
     kubectx
     k9s
@@ -101,7 +120,8 @@
     twitch-cli
 
     # Migrated from pnpm global (2026-08-20)
-    ast-grep     # npm: @ast-grep/cli
+    ast-grep     # npm: @ast-grep/cli; also covers the ast-grep crate, whose
+                 # second binary `sg` nixpkgs does not ship and we do not keep
     bats         # npm: bats
     prettier     # npm: prettier
     prek         # npm: @j178/prek
