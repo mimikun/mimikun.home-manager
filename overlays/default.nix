@@ -3,4 +3,5 @@
 [
   (import ./powershell.nix)
   (import ./prebuilt-github-tools.nix)
+  (import ./prebuilt-rust-tools.nix)
 ]
