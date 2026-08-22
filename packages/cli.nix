@@ -189,6 +189,45 @@
 
     # Task tracking
     dstask
+    basilk       # minimal kanban TUI
+    mask         # task runner defined by a markdown file
+
+    # The last batch of the cargo migration, 2026-08-22. Everything that
+    # remains on cargo after this is blocked on something the procedure cannot
+    # resolve: no nixpkgs attribute at all, nixpkgs behind the installed
+    # version, or the attribute name taken by a different program.
+
+    # Secrets and encryption
+    rbw          # bitwarden client. nixpkgs builds git.tozt.net, the author's
+                 # own git server; the GitHub repo crates.io names is a mirror
+                 # and points its homepage back at it. Ships rbw-agent too
+    rage         # encryption; ships rage-keygen too
+    passepartui  # TUI for pass
+    checkpwn     # built from the crates.io tarball
+
+    # Notes, journals, bookmarks
+    tui-journal  # installs as `tjournal`
+    bmm          # bookmarks
+    kibi         # tiny text editor
+
+    # Dotfiles and toolchains
+    dotter       # dotfile templater
+    dotslash     # built from the crates.io tarball
+    bob-nvim     # neovim version manager; installs as `bob`
+
+    # Reading and social
+    lobtui       # lobste.rs
+    tuisky       # bluesky
+    wthrr        # weather
+
+    # Games and practice
+    chess-tui
+    tukai        # touch typing
+    rustfinity   # built from the crates.io tarball
+
+    # Lookups
+    domain-check
+    rana         # nostr key mining
 
     # Typing practice. Moved off cargo on 2026-08-20: building it took 7h51m of
     # a 10h vup run, 78% of the total, and was killed rather than finished.
