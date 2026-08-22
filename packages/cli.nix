@@ -45,6 +45,7 @@
     broot       # tree view with fuzzy search
     tere        # faster cd + ls
     zoxide      # cd that learns
+    television  # general purpose fuzzy finder; installs as `tv`
 
     # Log viewing
     lnav
@@ -54,6 +55,37 @@
     mprocs
     sampler
     ttyd
+
+    # Shell and terminal environment, moved off `cargo install` on 2026-08-22.
+    # Same rule as the earlier batches: nixpkgs src owner/repo checked against
+    # what crates.io lists, binary names read from meta.mainProgram, and every
+    # version matched what cargo had installed.
+    #
+    # pueue is deliberately not here. /usr/bin/pueued is a hand-made symlink
+    # into ~/.cargo/bin, so uninstalling the crate leaves it dangling and the
+    # daemon fails to start next time. That one needs the symlink handled with
+    # it. topgrade is held back too: it runs the vup whose duration is the
+    # measurement this migration is waiting on.
+    starship       # prompt; starship-jj already moved in the git batch
+    zellij         # terminal workspace
+    sheldon        # shell plugin manager
+    intelli-shell  # command suggestions
+    pay-respects   # command correction. nixpkgs builds the codeberg.org repo,
+                   # which is what crates.io lists as homepage; the repository
+                   # field points at a GitHub mirror
+    navi           # interactive cheatsheet
+    tealdeer       # tldr client; installs as `tldr`
+    hwatch         # watch with history
+    viddy          # watch, modernised. crates.io carries no repository field,
+                   # so identity rests on the crate owner matching the src
+    just           # command runner
+    presenterm     # terminal slideshow
+    snipt          # snippet expansion
+    kbt            # keyboard tester
+    systeroid      # sysctl with a TUI
+    genact         # activity generator
+    cmd-wrapped    # shell history summary
+    theattyr       # VT100 art player
 
     # Network
     doggo
