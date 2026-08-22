@@ -29,6 +29,33 @@
     direnv
     mods
 
+    # Text, search and data tools, moved off `cargo install` on 2026-08-22.
+    # Same rule as the earlier batches: nixpkgs src owner/repo checked against
+    # what crates.io lists, binary names read from meta.mainProgram, versions
+    # compared before adding anything.
+    bat          # cat with syntax highlighting
+    ripgrep      # installs as `rg`
+    tokei        # count lines of code
+    grex         # build a regex from examples
+    choose       # cut and awk, human-readable
+    srgn         # structural text and code edits
+    serpl        # search and replace TUI
+    swpui        # search and replace TUI; installs as `swp`
+    jnv          # interactive jq
+    jsongrep     # JSONPath queries; installs as `jg`
+    fblog        # JSON log viewer
+    toml2json    # built from the crates.io tarball
+    csview       # CSV viewer
+    xan          # CSV processing
+    xleak        # Excel viewer
+    hexyl        # hex viewer
+    heh          # hex editor
+    bingrep      # grep through binaries
+    mdbook       # build books from markdown
+    mdfried      # markdown viewer with images
+    treemd       # markdown navigator
+    doxx         # .docx viewer
+
     # Files & disk
     gomi
     ncdu
