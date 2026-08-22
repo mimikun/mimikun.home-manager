@@ -1,76 +1,22 @@
 # Tools nixpkgs does not package, installed from their upstream release
 # binaries -- the same thing aqua was doing, expressed as derivations.
 #
-# Nothing is built from source. Each entry fetches one release asset and copies
-# a binary out of it, so a version bump is a version string and a hash:
+# The builder lives in ./mk-prebuilt.nix, shared with the other prebuilt-*
+# overlay. Nothing is built from source.
 #
-#     nix store prefetch-file --hash-type sha256 <asset url>
-#
-# That is the cost of moving these off aqua: renovate used to bump them
-# automatically, and here it does not. The trade was deliberate -- as long as
-# one tool needs aqua, aqua needs a GitHub PAT, which is the reason for the
-# migration in the first place.
+# Moving these off aqua gave up renovate's automatic version bumps. The trade
+# was deliberate -- as long as one tool needs aqua, aqua needs a GitHub PAT,
+# which is the reason for the migration in the first place -- and bumping is
+# being handled separately now.
 #
 # Three of these collide with existing nixpkgs attributes that ship unrelated
 # software: `qq` is Tencent QQ, `gama` is GNU Gama, `pingu` is a different
 # pingu. They are added under prefixed attribute names rather than overriding
 # the originals, so nothing else in nixpkgs silently gets a different package.
 # The commands they install keep their usual names.
-#
-# `meta.license` is deliberately absent. These derivations are local, and
-# stating a license without checking each project would be a guess.
 final: prev:
 let
-  inherit (prev) lib;
-
-  # url shapes differ per project, so each entry spells its own out rather than
-  # deriving it from a template that would only be true for some of them.
-  mk =
-    {
-      pname,
-      version,
-      url,
-      hash,
-      bin ? pname,
-      # subdirectory inside the archive holding the binary; null means the
-      # archive is flat
-      subdir ? null,
-      # the asset is the binary itself, not an archive
-      bare ? false,
-      description,
-      homepage,
-    }:
-    prev.stdenvNoCC.mkDerivation (
-      {
-        inherit pname version;
-
-        src = prev.fetchurl { inherit url hash; };
-
-        # Most of these are static Go binaries, where autoPatchelfHook finds
-        # nothing to do. misskey-cli is dynamically linked and needs it.
-        nativeBuildInputs =
-          [ prev.autoPatchelfHook ] ++ lib.optional (lib.hasSuffix ".zip" url) prev.unzip;
-        buildInputs = [ prev.stdenv.cc.cc.lib ];
-
-        installPhase = ''
-          runHook preInstall
-          install -Dm755 ${if bare then "$src" else bin} $out/bin/${bin}
-          runHook postInstall
-        '';
-
-        meta = {
-          inherit description homepage;
-          mainProgram = bin;
-          platforms = [ "x86_64-linux" ];
-        };
-      }
-      // (
-        if bare then
-          { dontUnpack = true; }
-        else
-          { sourceRoot = if subdir == null then "." else subdir; }
-      )
-    );
+  mk = import ./mk-prebuilt.nix prev;
 in
 {
   # aquaproj/registry-tool. The binary was renamed from aqua-registry to argd;
