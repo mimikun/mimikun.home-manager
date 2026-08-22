@@ -7,6 +7,33 @@
     ghq
     hk  # jdx/hk: git hook manager
 
+    # Git & Jujutsu, moved off `cargo install` on 2026-08-22. Same rule as the
+    # earlier batches: nixpkgs src owner/repo checked against what crates.io
+    # lists, binary names read from meta.mainProgram, and every version matched
+    # what cargo had installed.
+    #
+    # jujutsu, not jj: nixpkgs `jj` is tidwall's JSON Stream Editor, which ships
+    # a binary called `jj` as well. Name and binary both match the Jujutsu crate
+    # while the contents do not.
+    jujutsu       # jj-cli crate, installs as `jj`
+    starship-jj   # jj prompt segment for starship
+    gitu          # magit-like TUI
+    serie         # commit graph
+    git-graph     # src moved mlange-42 -> git-bahn, a 301 confirms it
+    git-interactive-rebase-tool  # installs as `interactive-rebase-tool`
+    worktrunk     # worktree manager, installs as `wt`
+    gfold         # status across many repositories
+    deadbranch    # prunes stale branches
+    gitnr         # builds .gitignore files from templates
+    gitlogue      # commit replay
+    onefetch      # repository summary
+    koji          # conventional commit prompt
+
+    # Diffs & merge tools
+    delta       # git-delta crate
+    difftastic  # installs as `difft`
+    oyui        # merge tool and diff editor for Jujutsu
+
     # Fuzzy finder
     fzf
 
@@ -67,6 +94,11 @@
     jjui
     diffnav
     tuicr  # review AI-generated diffs like a pull request
+
+    # Forge CLIs, moved off `cargo install` on 2026-08-22
+    codeberg-cli   # installs as `berg`
+    forgejo-cli    # installs as `fj`
+    wrkflw         # runs GitHub Actions workflows locally
 
     # Secrets & environment
     bitwarden-cli
