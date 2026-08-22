@@ -98,6 +98,7 @@
     mprocs
     sampler
     ttyd
+    sesh  # joshmedeski/sesh: smart session manager
 
     # Shell and terminal environment, moved off `cargo install` on 2026-08-22.
     # Same rule as the earlier batches: nixpkgs src owner/repo checked against
