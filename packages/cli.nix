@@ -151,6 +151,42 @@
     # Data conversion
     yj
 
+    # The categories stopped dividing here. Everything below moved off
+    # `cargo install` on 2026-08-22 in one batch because no group left was
+    # bigger than a handful. Same checks as the earlier batches.
+
+    # LLMs from the terminal
+    aichat
+    smartcat     # installs as `sc`
+    tenere
+
+    # Calculators, dates, calendars
+    eva          # built from the crates.io tarball
+    fend
+    carl         # crates.io points at codeberg, nixpkgs builds the author's
+                 # GitHub repo; the crate owner matches both
+    bttf
+
+    # Images, screens, colours
+    viu
+    qrtool
+    menyoki
+    mcat
+    pastel
+    t-rec
+    code-minimap
+
+    # Development odds and ends
+    sccache
+    rust-script
+    ron-lsp
+    desed        # sed debugger
+    ghciwatch
+    rustlens     # repo renamed vizier -> Rustlens, a 301 confirms it
+    erg
+    flamelens
+    intentrace   # strace, prettified
+
     # Task tracking
     dstask
 
