@@ -7,6 +7,9 @@
   #
   # A comment after a name is the command it installs, where that differs from
   # the attribute.
+  # wisu is absent as well: its newest crate is 0.1.7 while upstream's newest
+  # release is 0.1.6, so moving it would go backwards.
+  #
   # pay-respects' two module crates are absent: the nixpkgs pay-respects added
   # in the earlier batch already ships _pay-respects-fallback-100-request-ai and
   # _pay-respects-module-100-runtime-rules, and buildEnv refuses the duplicate.
@@ -56,7 +59,7 @@
     glab-tui-crate  # glab-tui
     gnomad
     gwm-cli  # gwm
-    harper-ls  # harper-cli
+    harper-ls
     hazelnut
     hexapoda
     hf
@@ -70,7 +73,7 @@
     kite-tui
     krafna
     lawkit
-    lazycelery  # lazycelery-linux-x86_64
+    lazycelery
     livediff
     mairu
     mamediff
@@ -80,7 +83,7 @@
     moltbook-tui  # moltbook
     mq-run  # mq
     needs
-    netwatch-tui  # netwatch-linux-x86_64-static
+    netwatch-tui  # netwatch
     nu
     nu-plugin-formats  # nu_plugin_formats
     nu-plugin-gstat  # nu_plugin_gstat
@@ -131,7 +134,6 @@
     vortix
     vscli
     wireman
-    wisu
     work-tuimer
     xsv
   ];

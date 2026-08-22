@@ -19,6 +19,9 @@ prev:
   url,
   hash,
   bin ? pname,
+  # the file to copy out of the archive, when upstream names it something
+  # other than the command it installs as (e.g. lazycelery-linux-x86_64)
+  file ? bin,
   # subdirectory inside the archive holding the binary; null means the archive
   # is flat
   subdir ? null,
@@ -47,7 +50,7 @@ prev.stdenvNoCC.mkDerivation (
 
     installPhase = ''
       runHook preInstall
-      install -Dm755 ${if bare then "$src" else bin} $out/bin/${bin}
+      install -Dm755 ${if bare then "$src" else file} $out/bin/${bin}
       runHook postInstall
     '';
 
