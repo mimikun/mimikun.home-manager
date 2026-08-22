@@ -88,6 +88,9 @@
 
     # Languages
     gleam
+    ghcitty  # mattlianje/ghcitty: a friendlier GHCi. Built from the upstream
+             # flake, declared as an input in flake.nix; nixpkgs has no
+             # attribute for it
 
     # Issue & change tracking
     git-bug
