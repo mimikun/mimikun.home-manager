@@ -8,6 +8,22 @@
     gdu
     fastfetch
 
+    # System and container monitoring, moved off `cargo install` on 2026-08-22.
+    # Same rule as the earlier batches: nixpkgs src owner/repo checked against
+    # what crates.io lists, binary names read from meta.mainProgram, versions
+    # compared before adding anything.
+    procs                # ps replacement
+    macchina             # system information
+    hyperfine            # command benchmarking
+    cyme                 # lsusb, modernised
+    amdtop               # amdgpu_top frontend
+    systemctl-tui        # nixpkgs is at 0.8.0, ahead of the 0.7.0 cargo had
+    systemd-manager-tui  # installs as `systemd-manager-tui`
+    flawz                # CVE browser
+    dtop                 # docker dashboard
+    ducker               # docker container manager
+    oxker                # docker container TUI
+
     # General CLI utilities
     jq
     direnv
@@ -89,6 +105,21 @@
 
     # Network
     doggo
+
+    # Network and HTTP tools, moved off `cargo install` on 2026-08-22
+    xh           # HTTP requests
+    atac         # API client, postman-like
+    slumber      # HTTP/REST client
+    bandwhich    # network utilisation by process
+    netscanner   # network scanner
+    rustscan     # port scanner. crates.io names rustscan/rustscan, which 301s
+                 # to bee-san/RustScan, the repo nixpkgs builds
+    ttl          # traceroute/mtr-style TUI
+    xfr          # iperf3 alternative
+    sshx         # collaborative terminal sharing
+    kanha        # web-app pentesting suite
+    monolith     # bundle a web page into one HTML file
+    tzupdate     # set the timezone from IP geolocation
 
     # Data conversion
     yj
