@@ -30,7 +30,7 @@ in
 
   ag = mk {
     pname = "ag";
-    version = "0.19.5";
+    version = "0.19.6";
     bin = "agrind";
     url = "https://github.com/rcoh/angle-grinder/releases/download/v0.19.6/agrind-x86_64-unknown-linux-musl.tar.gz";
     hash = "sha256-P+9lZVTCOYD8vo4UDZflY7e1O5QbdI02axrCig2x4is=";
@@ -58,7 +58,7 @@ in
 
   basalt-tui = mk {
     pname = "basalt-tui";
-    version = "0.12.7";
+    version = "basalt";
     bin = "basalt";
     subdir = "basalt-0.12.7-x86_64-unknown-linux-musl";
     url = "https://github.com/erikjuhani/basalt/releases/download/basalt/v0.12.7/basalt-0.12.7-x86_64-unknown-linux-musl.tar.gz";
@@ -97,7 +97,7 @@ in
 
   brush-shell = mk {
     pname = "brush-shell";
-    version = "0.4.0";
+    version = "brush-shell-v0.4.0";
     bin = "brush";
     url = "https://github.com/reubeno/brush/releases/download/brush-shell-v0.4.0/brush-x86_64-unknown-linux-musl.tar.gz";
     hash = "sha256-c5eqLOzvQ+04BwkStthl/b4j3Aj9otYUjYzujcEtFe4=";
@@ -138,7 +138,7 @@ in
 
   clin-rs = mk {
     pname = "clin-rs";
-    version = "0.11.1";
+    version = "0.11.2";
     libs = [ prev.openssl prev.zlib ];
     bin = "clin";
     url = "https://github.com/reekta92/clin-rs/releases/download/v0.11.2/clin-rs-x86_64-unknown-linux-gnu.tar.gz";
@@ -256,7 +256,7 @@ in
 
   dockerfile-roast = mk {
     pname = "dockerfile-roast";
-    version = "1.6.0";
+    version = "1.6.1";
     bin = "droast";
     bare = true;
     url = "https://github.com/immanuwell/dockerfile-roast/releases/download/1.6.1/droast-linux-x86_64";
@@ -276,7 +276,7 @@ in
 
   du-dust = mk {
     pname = "du-dust";
-    version = "1.2.4";
+    version = "1.2.5";
     bin = "dust";
     subdir = "dust-v1.2.5-x86_64-unknown-linux-musl";
     url = "https://github.com/bootandy/dust/releases/download/v1.2.5/dust-v1.2.5-x86_64-unknown-linux-musl.tar.gz";
@@ -368,7 +368,7 @@ in
 
   flowrs-tui = mk {
     pname = "flowrs-tui";
-    version = "0.13.5";
+    version = "flowrs-tui-v0.13.5";
     libs = [ prev.openssl ];
     bin = "flowrs";
     subdir = "flowrs-tui-x86_64-unknown-linux-gnu";
@@ -399,7 +399,7 @@ in
 
   gistui = mk {
     pname = "gistui";
-    version = "0.17.1";
+    version = "0.18.0";
     subdir = "gistui-v0.18.0-x86_64-unknown-linux-gnu";
     url = "https://github.com/akunzai/gistui/releases/download/v0.18.0/gistui-v0.18.0-x86_64-unknown-linux-gnu.tar.gz";
     hash = "sha256-NnEUYgxPeWHwk7D0UrBm88TafqEFbqfKqGMx4HGR2rw=";
@@ -409,7 +409,7 @@ in
 
   gitpane = mk {
     pname = "gitpane";
-    version = "0.12.0";
+    version = "0.13.0";
     url = "https://github.com/affromero/gitpane/releases/download/v0.13.0/gitpane-x86_64-unknown-linux-musl.tar.gz";
     hash = "sha256-0LbK/jOyfmwI3mt579qXG4XnlBLivmAaX4c3cG+Gplw=";
     description = "Multi-repo Git workspace dashboard TUI";
@@ -418,7 +418,7 @@ in
 
   gitv-tui = mk {
     pname = "gitv-tui";
-    version = "0.4.5";
+    version = "gitv-tui-v0.4.5";
     bin = "gitv";
     url = "https://github.com/jayanaxhf/gitv/releases/download/gitv-tui-v0.4.5/gitv-x86_64-unknown-linux-musl.tar.gz";
     hash = "sha256-QcgJv0z3l1TCUiY7KOl7avkbtQhvY9oRRo40q1jOh5o=";
@@ -447,7 +447,7 @@ in
 
   gnomad = mk {
     pname = "gnomad";
-    version = "0.4.1";
+    version = "0.4.2";
     url = "https://github.com/GooseRooster/gnomad/releases/download/v0.4.2/gnomad-x86_64-unknown-linux-gnu.tar.gz";
     hash = "sha256-oydOqN1zQYgpEBGOvHT1PtxDT1RZMKOIhoWnB4CX71U=";
     description = "A lightweight TUI for managing tinted color schemes in the G";
@@ -465,12 +465,13 @@ in
     homepage = "https://github.com/kbrdn1/gwm-cli";
   };
 
+  # The release ships harper-cli and harper-ls as separate assets; this crate
+  # is the language server.
   harper-ls = mk {
     pname = "harper-ls";
     version = "2.8.0";
-    bin = "harper-cli";
-    url = "https://github.com/automattic/harper/releases/download/v2.8.0/harper-cli-x86_64-unknown-linux-musl.tar.gz";
-    hash = "sha256-D699145jOuiVDIzOCRplQwa1Pc+keouGquU/jimpEQA=";
+    url = "https://github.com/automattic/harper/releases/download/v2.8.0/harper-ls-x86_64-unknown-linux-musl.tar.gz";
+    hash = "sha256-VsaD1983VThEwNuLjRgqeDl6KWXgorglznDIrrXdsWA=";
     description = "The language checker for developers";
     homepage = "https://github.com/automattic/harper";
   };
@@ -543,7 +544,7 @@ in
 
   iwes = mk {
     pname = "iwes";
-    version = "0.19.1";
+    version = "iwe-v0.19.1";
     url = "https://github.com/iwe-org/iwe/releases/download/iwe-v0.19.1/iwe-v0.19.1-x86_64-unknown-linux-gnu.tar.gz";
     hash = "sha256-tIA1oF1Y8/4YUFa3sweNe29rvujMRLKetAHyD+wEapc=";
     description = "IWE LSP server";
@@ -552,7 +553,7 @@ in
 
   jjj = mk {
     pname = "jjj";
-    version = "0.4.1";
+    version = "0.5.1";
     subdir = "jjj-0.5.1-x86_64-unknown-linux-gnu";
     url = "https://github.com/doug/jjj/releases/download/v0.5.1/jjj-0.5.1-x86_64-unknown-linux-gnu.tar.gz";
     hash = "sha256-ikvkxCGecWhASgOsxh6NuzbPiFHVkmh+PnJG75lRRhk=";
@@ -572,7 +573,7 @@ in
 
   kite-tui = mk {
     pname = "kite-tui";
-    version = "0.1.0";
+    version = "0.1.1";
     subdir = "kite-tui-x86_64-unknown-linux-gnu";
     url = "https://github.com/KernelFreeze/kite-tui/releases/download/0.1.1/kite-tui-x86_64-unknown-linux-gnu.tar.xz";
     hash = "sha256-rTH5mUyxII8mkv/3paaNeoIndgBeN9ERXyq7Khnurqg=";
@@ -601,7 +602,7 @@ in
   lazycelery = mk {
     pname = "lazycelery";
     version = "0.8.3";
-    bin = "lazycelery-linux-x86_64";
+    file = "lazycelery-linux-x86_64";
     url = "https://github.com/Fguedes90/lazycelery/releases/download/v0.8.3/lazycelery-linux-x86_64.tar.gz";
     hash = "sha256-a+MrKm/ZJlam3ozJ/wPkHeYRA9CE3+1168hFXcq4wJ8=";
     description = "A terminal UI for monitoring and managing Celery workers and";
@@ -639,7 +640,7 @@ in
 
   mcdu = mk {
     pname = "mcdu";
-    version = "0.3.5";
+    version = "0.5.0";
     url = "https://github.com/mikalv/mcdu/releases/download/v0.5.0/mcdu-linux-x86_64-musl.tar.gz";
     hash = "sha256-4aPRsFaaqAu7TpIPHkzWbLTrILxxJLdJ79+Tzd/Xl1w=";
     description = "A modern disk usage analyzer with a terminal UI, inspired by";
@@ -676,17 +677,22 @@ in
     homepage = "https://github.com/terminaltrove/moltbook-tui";
   };
 
+  # The release publishes one bare binary per tool (mq, mq-check, mq-crawl,
+  # mq-dbg); this crate installs mq.
   mq-run = mk {
     pname = "mq-run";
     version = "0.8.3";
     bin = "mq";
     bare = true;
-    url = "https://github.com/harehare/mq/releases/download/v0.8.3/mq-check-x86_64-unknown-linux-musl";
-    hash = "sha256-ZDta0ePt93KxBD6Hvo6F2/0OM4uv/2AC2gF6lK+7Zmc=";
-    description = "Command-line interface for mq Markdown processing tool";
+    url = "https://github.com/harehare/mq/releases/download/v0.8.3/mq-x86_64-unknown-linux-musl";
+    hash = "sha256-hrRFTNDssWVNFzbfRJ8ACAbZeiDIY6QiEPuq4km3Jtg=";
+    description = "A jq-like command-line tool for markdown processing";
     homepage = "https://github.com/harehare/mq";
   };
 
+  # The release tag is `main`, which moves. The hash pins what is actually
+  # fetched, so builds stay reproducible, but a version bump here means
+  # refetching rather than following a tag.
   needs = mk {
     pname = "needs";
     version = "0.6.0";
@@ -700,7 +706,8 @@ in
   netwatch-tui = mk {
     pname = "netwatch-tui";
     version = "0.29.2";
-    bin = "netwatch-linux-x86_64-static";
+    bin = "netwatch";
+    file = "netwatch-linux-x86_64-static";
     url = "https://github.com/matthart1983/netwatch/releases/download/v0.29.2/netwatch-linux-x86_64-static.tar.gz";
     hash = "sha256-ubrAGqIke50IkQXd8YTmQ3bZ4gPYvusPDB9lktWP5u4=";
     description = "Real-time network diagnostics in your terminal. One command,";
@@ -807,7 +814,7 @@ in
 
   parallels = mk {
     pname = "parallels";
-    version = "0.0.1";
+    version = "0.1.0";
     url = "https://github.com/skanehira/parallels/releases/download/v0.1.0/parallels_Linux_x86_64.tar.gz";
     hash = "sha256-TdTbLpAzjPe/NANf/2Q7TjLPqmzoszj0vdBfUphBud4=";
     description = "A TUI tool to run multiple commands in parallel and view the";
@@ -886,7 +893,7 @@ in
 
   railwayapp = mk {
     pname = "railwayapp";
-    version = "5.41.2";
+    version = "5.43.1";
     bin = "railway";
     url = "https://github.com/railwayapp/cli/releases/download/v5.43.1/railway-v5.43.1-x86_64-unknown-linux-musl.tar.gz";
     hash = "sha256-zYPYeYpwoH+nnAciEMCey1xV7JO7L40vlRG86JtL1gU=";
@@ -918,7 +925,7 @@ in
 
   rusticon = mk {
     pname = "rusticon";
-    version = "0.2.3";
+    version = "0.3.0";
     url = "https://github.com/ronilan/rusticon/releases/download/v0.3.0/rusticon-terminal-linux.zip";
     hash = "sha256-FNzIrqXiOYz0/xNukLzTSPWgwruZdq97j5tzL66JInY=";
     description = "Rusticon is a mouse driven SVG favicon editor for your termi";
@@ -927,12 +934,12 @@ in
 
   rustnet-monitor = mk {
     pname = "rustnet-monitor";
-    version = "1.5.0";
+    version = "1.6.0";
     bin = "rustnet";
-    subdir = "rustnet-v1.6.0-x86_64-linux-android-musl";
-    url = "https://github.com/domcyrus/rustnet/releases/download/v1.6.0/rustnet-v1.6.0-x86_64-linux-android-musl.tar.gz";
-    hash = "sha256-FA2mcEIDVnx5KJPg+f4g8R7/OsRws2roS20moUJTOCk=";
-    description = "A cross-platform network monitoring terminal UI tool built w";
+    subdir = "rustnet-v1.6.0-x86_64-unknown-linux-musl";
+    url = "https://github.com/domcyrus/rustnet/releases/download/v1.6.0/rustnet-v1.6.0-x86_64-unknown-linux-musl.tar.gz";
+    hash = "sha256-ZHGV39rhx95JcgteST9Hh3Jy4pPs//HYOcNqlbsyJzw=";
+    description = "A cross-platform terminal-based network monitoring tool";
     homepage = "https://github.com/domcyrus/rustnet";
   };
 
@@ -948,7 +955,7 @@ in
 
   rvpm = mk {
     pname = "rvpm";
-    version = "3.44.0";
+    version = "3.46.0";
     url = "https://github.com/yukimemi/rvpm/releases/download/v3.46.0/rvpm-x86_64-unknown-linux-musl.tar.gz";
     hash = "sha256-ngqGLt89yBLBGIeQndAvfgLBBrQ1qjz9ato5SM+znPo=";
     description = "Fast Neovim plugin manager with pre-compiled loader and merg";
@@ -969,7 +976,7 @@ in
 
   scraps = mk {
     pname = "scraps";
-    version = "1.0.1";
+    version = "1.2.0";
     url = "https://github.com/boykush/scraps/releases/download/v1.2.0/scraps-x86_64-unknown-linux-musl.tar.gz";
     hash = "sha256-VRAxqn8mAIDKY4PY1TI0CHXJMLzCK2K5eLnLJOOws0w=";
     description = "Scraps is a portable CLI knowledge hub for managing intercon";
@@ -1112,9 +1119,11 @@ in
     homepage = "https://github.com/panter-dsd/tatuin";
   };
 
+  # Upstream publishes release candidates as its latest release, and crates.io
+  # carries nothing else either, so the rc is what there is.
   taws = mk {
     pname = "taws";
-    version = "1.2.1";
+    version = "1.3.0-rc.8";
     url = "https://github.com/huseyinbabal/taws/releases/download/v1.3.0-rc.8/taws-x86_64-unknown-linux-musl.tar.gz";
     hash = "sha256-AhyTWtGaA4zFxZ9DbLK0gP+fmBJmyDCtIMyA1YJQ+LU=";
     description = "Terminal UI for AWS - navigate, observe, and manage AWS reso";
@@ -1123,7 +1132,7 @@ in
 
   tod = mk {
     pname = "tod";
-    version = "0.17.1";
+    version = "0.18.0";
     url = "https://github.com/tod-org/tod/releases/download/v0.18.0/tod-0.18.0-linux-amd64.tar.gz";
     hash = "sha256-ucDg+kxTlUeSwg3adHYBh4NGeT4FCdiJIaTr2u1rqUE=";
     description = "An unofficial Todoist command-line client";
@@ -1196,15 +1205,6 @@ in
     homepage = "https://github.com/preiter93/wireman";
   };
 
-  wisu = mk {
-    pname = "wisu";
-    version = "0.1.7";
-    subdir = ".";
-    url = "https://github.com/sh1zen/wisu/releases/download/v0.1.6/wisu-linux-x86_64.tar.gz";
-    hash = "sha256-ALRfZ/BeFayfMhQrBei0wnCJydXqyIHubyZykmj6rnI=";
-    description = "A fast minimalist directory tree viewer, written in Rust";
-    homepage = "https://github.com/sh1zen/wisu";
-  };
 
   work-tuimer = mk {
     pname = "work-tuimer";
