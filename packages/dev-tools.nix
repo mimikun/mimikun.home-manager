@@ -29,6 +29,21 @@
     onefetch      # repository summary
     koji          # conventional commit prompt
 
+    # Git & GitHub, moved off `gup` on 2026-08-23. First batch of the Go
+    # migration. Same rule as the cargo batches: nixpkgs src owner/repo checked
+    # against what gup.conf fetches, binary names read from meta.mainProgram.
+    #
+    # Name matching alone was not enough on this population. Of the 51 gup tools
+    # whose name exists in nixpkgs, 11 are a different project entirely - `pam`
+    # is linux-pam, `surge` is the synthesiser, `fabric` is the Python
+    # deployment tool. src.url is what settles it.
+    act3            # last 3 runs of a GitHub Actions workflow
+    ghfetch         # neofetch-style GitHub user info
+    gitsnip         # download a single folder out of a repository
+    gwq             # git worktree manager with a fuzzy finder
+    pg-schema-diff  # stripe/pg-schema-diff, Postgres schema migrations
+    hut             # sr.ht CLI; nixpkgs fetches from git.sr.ht, not a mirror
+
     # Diffs & merge tools
     delta       # git-delta crate
     difftastic  # installs as `difft`
