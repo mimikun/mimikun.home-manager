@@ -246,6 +246,27 @@
     ccusage        # npm: ccusage
     codebuff       # npm: codebuff
 
+    # Charm-family TUIs, moved off `gup` on 2026-08-24. Third batch of the Go
+    # migration. Same rule as the earlier batches: nixpkgs src owner/repo
+    # checked against the import_path in gup.json, binary names read from
+    # meta.mainProgram.
+    #
+    # charm-freeze, not freeze: nixpkgs `freeze` is optiv/Freeze, a shellcode
+    # loader. The charmbracelet one is carried under a prefixed attribute and
+    # still installs as `freeze`. Looking it up by name alone would have
+    # installed an unrelated program.
+    #
+    # Three of the ten stayed on gup: crush (0.88.1 here vs 0.91.0 there) and
+    # pop (0.3.0 vs 0.5.0) would move backwards, and sheets has no attribute.
+    # glow goes forward across a major, 2.1.2 to 3.0.0.
+    charm-freeze  # charmbracelet/freeze, installs as `freeze`
+    glow          # markdown reader
+    gum           # shell-script prompts and styling
+    nap           # maaslalani/nap, code snippets
+    skate         # key-value store
+    slides        # maaslalani/slides, terminal presentations
+    vhs           # terminal session recorder
+
     # From overlays/prebuilt-github-tools.nix
     jfryy-qq       # jq-style querying, installs as qq
     sheepla-pingu  # ping with a penguin, installs as pingu
