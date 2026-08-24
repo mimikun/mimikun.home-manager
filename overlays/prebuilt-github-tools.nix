@@ -134,6 +134,17 @@ in
     homepage = "https://github.com/termkit/gama";
   };
 
+  # nixpkgs carries subfinder but not this fork of it. Delete this entry if
+  # subfaster is ever packaged upstream.
+  subfaster = mk {
+    pname = "subfaster";
+    version = "2.18.0";
+    url = "https://github.com/melvinsh/subfaster/releases/download/v2.18.0/subfaster_2.18.0_linux_amd64.tar.gz";
+    hash = "sha256-/6rHKY6N4rI1gllokKMDPiTYsQ10fhFYwFWlAP3SWig=";
+    description = "Faster passive subdomain enumeration tool";
+    homepage = "https://github.com/melvinsh/subfaster";
+  };
+
   # Prefixed: nixpkgs `pingu` is an unrelated project of the same name.
   sheepla-pingu = mk {
     pname = "sheepla-pingu";

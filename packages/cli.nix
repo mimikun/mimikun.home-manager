@@ -149,6 +149,12 @@
     monolith     # bundle a web page into one HTML file
     tzupdate     # set the timezone from IP geolocation
 
+    # Passive subdomain enumeration, added 2026-08-24. subfaster is a fork of
+    # subfinder; both are installed because they are configured and sourced
+    # separately, and the binaries do not collide.
+    subfinder    # projectdiscovery/subfinder
+    subfaster    # melvinsh/subfaster, from overlays/prebuilt-github-tools.nix
+
     # Data conversion
     yj
 
