@@ -156,6 +156,30 @@
     vegeta
     k6
 
+    # Go development tools, moved off `gup` on 2026-08-24. Batch six of the Go
+    # migration. Same rule as the earlier batches: nixpkgs src owner/repo
+    # checked against the import_path in gup.json.
+    #
+    # delve, not dlv: nixpkgs has no `dlv` attribute at all. The package is
+    # named after the project and installs dlv and dlv-dap. Matching on the
+    # command name would have missed it, the same way fm-go and go-motion were
+    # missed until batch four.
+    #
+    # gopls resolves through a vanity domain: golang.org/x/tools is
+    # github.com/golang/tools, which is what nixpkgs fetches, tagged
+    # gopls/v0.23.0.
+    #
+    # gotags is pinned to a bare commit in nixpkgs rather than a tag. That
+    # commit is v1.4.1, the same release gup installed.
+    delve         # installs dlv and dlv-dap
+    gomodifytags
+    gopls
+    gore          # x-motemen/gore, Go REPL
+    gotags
+    gotip         # lusingander/gotip, not the golang.org toolchain fetcher
+    impl          # josharian/impl, generate method stubs
+    mage
+
     # Languages
     gleam
     ghcitty  # mattlianje/ghcitty: a friendlier GHCi. Built from the upstream
