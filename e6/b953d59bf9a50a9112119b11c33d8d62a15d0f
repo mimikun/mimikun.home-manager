@@ -1,0 +1,19 @@
+files.nix
+  s_3cc5f00567c560::t_8b04f86207e3e7 6-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "e6b953d59bf9a50a9112119b11c33d8d62a15d0f",
+  "prompts": {},
+  "sessions": {
+    "s_3cc5f00567c560": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a03275-d07f-75a3-bfc1-e9ef651fba21",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}
