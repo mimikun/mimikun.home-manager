@@ -267,6 +267,19 @@
     slides        # maaslalani/slides, terminal presentations
     vhs           # terminal session recorder
 
+    # Recovered by alias on 2026-08-24, batch four of the gup migration. These
+    # were all filed as unavailable: matching gup.json against nixpkgs by name
+    # either found nothing or found a different project. Searching for the
+    # aliased attribute instead turned up the real one, same src owner/repo,
+    # same version.
+    #
+    # Two more were recovered the same way but stay on gup, because nixpkgs
+    # trails what is installed: yq-go is 4.53.3 against yq 4.53.6, and bsky-cli
+    # is 0.0.81 against bsky 0.0.82.
+    fabric-ai  # danielmiessler/fabric, installs as `fabric`; nixpkgs `fabric`
+               # is the Python deployment tool
+    fm-go      # mistakenelf/fm, installs as `fm`
+
     # From overlays/prebuilt-github-tools.nix
     jfryy-qq       # jq-style querying, installs as qq
     sheepla-pingu  # ping with a penguin, installs as pingu
