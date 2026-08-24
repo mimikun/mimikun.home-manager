@@ -74,6 +74,29 @@
     ruff
     rumdl  # markdown linter and formatter
 
+    # Linters & formatters, moved off `gup` on 2026-08-24. Second batch of the
+    # Go migration. Same rule as batch 1: every nixpkgs src owner/repo checked
+    # against the import_path in gup.json, binary names read from
+    # meta.mainProgram.
+    #
+    # Two import paths are vanity domains that resolve elsewhere, so owner/repo
+    # cannot be extracted from the path itself: mvdan.cc/gofumpt is
+    # mvdan/gofumpt and mvdan.cc/sh/v3 is mvdan/sh.
+    #
+    # Only tools where nixpkgs is at or ahead of what gup has installed. Three
+    # candidates were left on gup because nixpkgs trails them: golangci-lint
+    # (2.12.2 vs 2.13.1), keep-sorted (0.9.0 vs 0.10.0) and revive (1.15.0 vs
+    # 1.16.0). pinact moves here and goes forward a major version, 3.10.1 to
+    # 4.1.1.
+    actionlint
+    asmfmt
+    editorconfig-checker  # v3, installs as `editorconfig-checker`
+    ghalint
+    gofumpt
+    pinact
+    shfmt                 # mvdan/sh
+    yamlfmt
+
     # Moved off `cargo install` on 2026-08-22. Every src owner/repo was checked
     # against what crates.io lists for the crate, and every version matched what
     # cargo had installed. treefmt is deliberately absent: nixpkgs only carries
