@@ -11,10 +11,18 @@ final: prev:
       hash = "sha256-kG++eH/SJcSsYk/n69Wx1Vpg4PXH71F5XSMVZPnuHBM=";
     };
 
+    nativeBuildInputs = [
+      prev.autoPatchelfHook
+      prev.makeWrapper
+    ];
+
+    buildInputs = [ prev.stdenv.cc.cc.lib ];
+
     installPhase = ''
-      install -Dm755 pi $out/bin/pi
-      mkdir -p $out/share/pi
-      cp -r theme docs examples $out/share/pi/
+      mkdir -p $out/libexec/pi
+      cp -r . $out/libexec/pi/
+      makeWrapper $out/libexec/pi/pi $out/bin/pi \
+        --set PI_PACKAGE_DIR $out/libexec/pi
     '';
 
     meta = {
