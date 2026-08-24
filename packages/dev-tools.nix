@@ -257,6 +257,7 @@
     httpyac      # npm: httpyac
     mermaid-cli  # npm: @mermaid-js/mermaid-cli, installs as mmdc
     codegraph    # npm: @colbymchenry/codegraph
+    pi-coding-agent  # npm: @earendil-works/pi-coding-agent; installs as pi
 
     # From overlays/prebuilt-github-tools.nix
     aqua-registry-tool  # installs as argd
