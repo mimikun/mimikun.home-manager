@@ -80,5 +80,24 @@
     wuzz             # Interactive cli tool for HTTP inspection
     xc               # Markdown defined task runner
     yaml2json        # Convert yaml to json
+
+    # Batch nine, 2026-08-24. These did not clear the two checks above as
+    # written, and each needed one extra fact before it could move.
+    #
+    # Three had a src owner that disagreed with the import_path. GitHub
+    # answered for all three: darkhz/bluetuith now redirects to
+    # bluetuith-org/bluetuith, gchaincl/httplab to qustavo/httplab, and
+    # patrickhener/goshs (which goshs.de fronts) to goshs-labs/goshs. A 301
+    # means a rename, not a different project, and all three are at the same
+    # version gup had.
+    #
+    # Two move forward across a major version rather than staying put: croc
+    # 10.7.0 to 11.1.0 and gollama 1.37.5 to 2.0.5. Worth knowing before the
+    # next time either one is used.
+    bluetuith  # TUI-based Bluetooth connection manager
+    croc       # Easily and securely send things from one computer to another
+    gollama    # Go manage your Ollama models
+    goshs      # Simple, yet feature-rich web server written in Go
+    httplab    # Interactive WebServer
   ];
 }
