@@ -130,6 +130,24 @@
     emmylua-ls      # emmylua_ls crate
     emmylua-doc-cli # emmylua_doc_cli crate
 
+    # Containers and Kubernetes, moved off `gup` on 2026-08-24. Batch five of
+    # the Go migration. Same rule as the earlier batches: nixpkgs src
+    # owner/repo checked against the import_path in gup.json.
+    #
+    # ktop is the one to read twice. Its meta.mainProgram is kubectl-ktop, not
+    # ktop, which reads like the command would disappear. The derivation ships
+    # both names, so `ktop` keeps working - mainProgram names the primary
+    # binary, it does not enumerate them.
+    #
+    # lfk stayed on gup: nixpkgs has 0.14.19 against the installed 0.18.1.
+    dive            # image layer explorer
+    dockerfile-pin  # azu/dockerfile-pin, pins Dockerfile base image digests
+    ktop            # cluster top; also installs as kubectl-ktop
+    ku              # bjarneo/ku, kubernetes TUI
+    layerx          # deveshctl/layerx, image layer inspection
+    lazydocker      # docker TUI
+    sou             # knqyf263/sou, browse container image filesystems
+
     # Kubernetes
     kubectx
     k9s
