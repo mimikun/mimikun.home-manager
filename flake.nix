@@ -17,6 +17,9 @@
       url = "github:mattlianje/ghcitty";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # OMP is a batteries-included Pi fork with a Home Manager module.
+    omp.url = "github:can1357/oh-my-pi";
   };
 
   outputs =
@@ -24,6 +27,7 @@
       nixpkgs,
       home-manager,
       ghcitty,
+      omp,
       ...
     }:
     let
@@ -53,7 +57,10 @@
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ];
+        modules = [
+          ./home.nix
+          omp.homeManagerModules.default
+        ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
