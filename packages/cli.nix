@@ -286,6 +286,22 @@
                # is the Python deployment tool
     fm-go      # mistakenelf/fm, installs as `fm`
 
+    # Moved off `gup` on 2026-08-24, batch seven. Cut by source repository
+    # rather than by category: one nixpkgs attribute replaces several gup
+    # entries, because gup tracks a repository once per command while nixpkgs
+    # packages the repository once.
+    #
+    # age replaces four gup entries - age, age-inspect, age-keygen and
+    # age-plugin-batchpass, all from filippo.io/age at 1.3.1 - and adds
+    # age-plugin-pq, age-plugin-tag, age-plugin-tagpq and age-plugin-tagtest.
+    #
+    # murex is pinned in nixpkgs as 7.2.1001, which is commit 8678ad89405c,
+    # the exact commit gup's pseudo-version names. docgen comes from the same
+    # repository and stays on gup: the nixpkgs derivation builds the shell and
+    # does not install it.
+    age
+    murex
+
     # From overlays/prebuilt-github-tools.nix
     jfryy-qq       # jq-style querying, installs as qq
     sheepla-pingu  # ping with a penguin, installs as pingu
