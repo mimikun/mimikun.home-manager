@@ -36,7 +36,21 @@
       defaultThinkingLevel = "medium";
       modelRoleStorage = "global";
       # Declared, so `/model` changes revert on the next switch.
-      modelRoles.default = "anthropic/claude-opus-5";
+      modelRoles = {
+        default = "anthropic/claude-opus-5";
+        # Prewalk's handoff target, so this is the coding model. Also the first
+        # entry of the default `cycleOrder`, which makes Ctrl+L a one-key
+        # toggle between conversation and coding.
+        smol = "openai-codex/gpt-5.6-terra";
+        # Without this, `tiny` falls back to `smol` and bills the session
+        # titles, memory writes, and auto-thinking classification to the
+        # coding model.
+        tiny = "anthropic/claude-haiku-4-5";
+      };
+      # Conversation runs on `default`. Once a `todo` call has opened the gate,
+      # the first completed `edit`/`write` hands the session to the `smol` role
+      # for the rest of the session. One-shot: `/prewalk` re-arms it.
+      prewalk.enabled = true;
     };
   };
 }
