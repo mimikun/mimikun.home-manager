@@ -1,8 +1,23 @@
-{ ... }:
+{ config, ... }:
 {
   home.file = {
     # Add dotfile symlink definitions here
     # ".screenrc".source = dotfiles/screenrc;
+
+    # OMP's personality block. The body is Anthropic's own text, lifted from the
+    # `Concise` output style built into the Claude Code binary, so it cannot be
+    # committed here — this repo is public. The real file lives in the private
+    # `mimikun.agent-system` repo and only its path appears below.
+    #
+    # An out-of-store symlink, not `.text`: keeping the body out of the Nix
+    # store is the entire point. OMP reads this file and never writes it, so a
+    # symlink is safe (unlike `config.yml`, which OMP rewrites in place).
+    #
+    # If `mimikun.agent-system` is not cloned, the link dangles and OMP falls
+    # back to the configured `personality` preset without an error.
+    ".omp/agent/PERSONALITY.md".source =
+      config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/ghq/github.com/mimikun/mimikun.agent-system/omp/PERSONALITY.md";
 
     ".pi/agent/extensions/exit-command.ts".text = ''
       import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
