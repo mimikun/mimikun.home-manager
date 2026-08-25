@@ -1,0 +1,19 @@
+files.nix
+  s_316bab22f5e68a::t_a82e02a411b1ff 1,7-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "21c4ca05432dda49ba81d368b7d085105b259f01",
+  "prompts": {},
+  "sessions": {
+    "s_316bab22f5e68a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_316bab22f5e68a",
+        "model": "unknown"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}
