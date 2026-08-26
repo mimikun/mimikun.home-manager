@@ -1,0 +1,14 @@
+flake.lock
+  h_220433a6faf6b8 141-142,145,233-234,237
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "951b7c333c15ee3d16677ab73df90c56bd219f9d",
+  "prompts": {},
+  "humans": {
+    "h_220433a6faf6b8": {
+      "author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}
