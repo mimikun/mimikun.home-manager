@@ -111,6 +111,34 @@ in
     homepage = "https://github.com/Mayowa-Ojo/chmod-cli";
   };
 
+  # Both of the entries below back a hook in ~/.claude/settings.json. That file
+  # is synced by chezmoi, but nothing carried the binaries, so a new machine had
+  # the hooks wired to commands it did not have. `rtk`, the third of that set,
+  # is not here: nixpkgs carries it, so it is taken from there.
+  #
+  # The asset is the plain build, not the `_fzf` one: statically linked Go, flat
+  # archive.
+  lazy-tmux = mk {
+    pname = "lazy-tmux";
+    version = "0.2.1";
+    url = "https://github.com/alchemmist/lazy-tmux/releases/download/v0.2.1/lazy-tmux_linux_amd64.tar.gz";
+    hash = "sha256-7D0QD9XSl/L5FmCXdpLCTyOIlq4mWZmzKu3o/R6Rwvo=";
+    description = "Tmux session manager with a Claude Code status hook";
+    homepage = "https://github.com/alchemmist/lazy-tmux";
+  };
+
+  # The asset is the bare binary, named for the platform rather than the
+  # command. static-pie, so autoPatchelfHook has nothing to rewrite.
+  git-ai = mk {
+    pname = "git-ai";
+    version = "1.7.2";
+    bare = true;
+    url = "https://github.com/git-ai-project/git-ai/releases/download/v1.7.2/git-ai-linux-x64";
+    hash = "sha256-PCi3Q0j/eBMvtCvI5/5NwvCQ6+tDF5PqcGteUxnXFXE=";
+    description = "Checkpoints an AI agent's work as git commits";
+    homepage = "https://github.com/git-ai-project/git-ai";
+  };
+
   # Prefixed: nixpkgs `qq` is the Tencent QQ messenger.
   jfryy-qq = mk {
     pname = "jfryy-qq";

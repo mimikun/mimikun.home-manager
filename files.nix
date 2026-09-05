@@ -1,6 +1,19 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   home.file = {
+    # Two hooks in ~/.claude/settings.json name these binaries by absolute path
+    # rather than letting PATH resolve them, so putting the packages in
+    # `home.packages` alone leaves the hooks pointing at nothing. The links put
+    # a binary at the path the hooks already spell out.
+    #
+    # Store symlinks, not out-of-store ones: the targets are Nix derivations, so
+    # they move with each generation and nothing writes to them.
+    #
+    # Delete these when settings.json switches to bare command names. The third
+    # tool of the set, rtk, already does that and needs no link.
+    ".local/bin/lazy-tmux".source = "${pkgs.lazy-tmux}/bin/lazy-tmux";
+    ".git-ai/bin/git-ai".source = "${pkgs.git-ai}/bin/git-ai";
+
     # Add dotfile symlink definitions here
     # ".screenrc".source = dotfiles/screenrc;
 
