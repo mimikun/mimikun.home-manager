@@ -274,5 +274,17 @@
     # nixpkgs carries the same project (rtk-ai/rtk) and is ahead of what was
     # installed by hand elsewhere, so no overlay entry exists for it.
     rtk
+  ]
+  # Kept off the Linux list on purpose: nixpkgs marks xcbeautify
+  # aarch64-darwin-only, so naming it unconditionally breaks the build here.
+  # It formats xcodebuild output, which is useless without Xcode anyway.
+  #
+  # It is written down rather than dropped because this flake currently builds
+  # one system ("x86_64-linux" in flake.nix) and a Mac would mean adding
+  # another. Carrying the guard now means the tool arrives with that config
+  # instead of having to be rediscovered -- it came off aqua, which is going
+  # away, and nothing else would remember it.
+  ++ pkgs.lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
+    pkgs.xcbeautify  # cpisciotta/xcbeautify: formats xcodebuild output
   ];
 }
