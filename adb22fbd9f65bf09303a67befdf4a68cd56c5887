@@ -1,0 +1,19 @@
+flake.lock
+  s_9653ba170c092a::t_668dc1359541a4 10-11,14,25-26,29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "adb22fbd9f65bf09303a67befdf4a68cd56c5887",
+  "prompts": {},
+  "sessions": {
+    "s_9653ba170c092a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b1f642e0-0f13-4825-a0a3-b064805d8927",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}

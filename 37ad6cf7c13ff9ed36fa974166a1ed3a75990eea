@@ -1,0 +1,27 @@
+overlays/default.nix
+  s_205bf74d3214e0::t_21135ec9375b16 6
+overlays/mk-prebuilt.nix
+  s_205bf74d3214e0::t_0d653b4b9f049d 27-29,46
+overlays/prebuilt-rust-tools.nix
+  s_205bf74d3214e0::t_41cf8cdb2840d6 1-1228
+packages/default.nix
+  s_205bf74d3214e0::t_d85b07a678c45d 6
+packages/prebuilt-rust.nix
+  s_205bf74d3214e0::t_a6a8bf3a9803ca 1-138
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "37ad6cf7c13ff9ed36fa974166a1ed3a75990eea",
+  "prompts": {},
+  "sessions": {
+    "s_205bf74d3214e0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0f34fbe0-9d87-460e-9ed5-b609a9bbed53",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}

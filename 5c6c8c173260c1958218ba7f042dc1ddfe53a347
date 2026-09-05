@@ -1,0 +1,19 @@
+overlays/pi-coding-agent.nix
+  s_3cc5f00567c560::t_9fdb004f4cb715 14-20,22-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "5c6c8c173260c1958218ba7f042dc1ddfe53a347",
+  "prompts": {},
+  "sessions": {
+    "s_3cc5f00567c560": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a03275-d07f-75a3-bfc1-e9ef651fba21",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}

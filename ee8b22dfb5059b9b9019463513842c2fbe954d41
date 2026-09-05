@@ -1,0 +1,19 @@
+docs/plans/package-manager-migration.md
+  s_97a7d722bec7af::t_140a9f02893316 45,53-54,89,138,140,142-143,145-146,148,150-200,212,214-258
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "ee8b22dfb5059b9b9019463513842c2fbe954d41",
+  "prompts": {},
+  "sessions": {
+    "s_97a7d722bec7af": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "66f60162-49ab-48a8-90ae-2e6d71bf96b5",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}

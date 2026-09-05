@@ -1,0 +1,21 @@
+dotfiles/omp/config.yml
+  s_dd223b964024c6::t_af024d93c51051 1-26
+files.nix
+  s_dd223b964024c6::t_d33d1e5892f9ad 22-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "f5724f0f3274d232b335b69bc7ea024556e99723",
+  "prompts": {},
+  "sessions": {
+    "s_dd223b964024c6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_dd223b964024c6",
+        "model": "unknown"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}

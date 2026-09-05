@@ -1,0 +1,21 @@
+packages/cli.nix
+  s_9653ba170c092a::t_1d99aa795704c9 15-43
+packages/dev-tools.nix
+  s_9653ba170c092a::t_6f81ad0619de04 22-26,36,40-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "21b729734f0183f6b672e16c794f978f615e6b4b",
+  "prompts": {},
+  "sessions": {
+    "s_9653ba170c092a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b1f642e0-0f13-4825-a0a3-b064805d8927",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}

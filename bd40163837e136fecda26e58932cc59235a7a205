@@ -1,0 +1,25 @@
+packages/dev-tools.nix
+  s_8ddb9a3a2f37ad::t_dcf21a76d87866 260
+overlays/pi-coding-agent.nix
+  s_8ddb9a3a2f37ad::t_17af9d9dd5ba43 1-2,5,10-11,14,24
+  s_8ddb9a3a2f37ad::t_c00e440c355f6f 15-17
+  s_8ddb9a3a2f37ad::t_ec89ae6889e278 3-4,6-9,12-13,18-23,25-27
+overlays/default.nix
+  s_8ddb9a3a2f37ad::t_66a07393716f46 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "bd40163837e136fecda26e58932cc59235a7a205",
+  "prompts": {},
+  "sessions": {
+    "s_8ddb9a3a2f37ad": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a0325f-59fb-7f85-b880-aa8b3f72b071",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}

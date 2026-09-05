@@ -1,0 +1,19 @@
+packages/dev-tools.nix
+  s_9653ba170c092a::t_68eb6fa9dad04f 12-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "b0953c7f67d064ae704eb611c89d8017e3fe2909",
+  "prompts": {},
+  "sessions": {
+    "s_9653ba170c092a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b1f642e0-0f13-4825-a0a3-b064805d8927",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}

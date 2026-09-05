@@ -1,0 +1,19 @@
+programs.nix
+  s_7591d07766c0b0::t_dee712f8218b89 5-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "f2c82aefa3a7b03a6713891a8e39e68e06c59f9e",
+  "prompts": {},
+  "sessions": {
+    "s_7591d07766c0b0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1ce9118-b996-407e-9769-5312498e57a5",
+        "model": "unknown"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}
