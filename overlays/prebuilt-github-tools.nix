@@ -111,6 +111,57 @@ in
     homepage = "https://github.com/Mayowa-Ojo/chmod-cli";
   };
 
+  # The three below are not gap-fills like the rest of this file -- nixpkgs
+  # carries all of them. They are version pins, and they deliberately OVERRIDE
+  # the nixpkgs attribute of the same name rather than taking a prefix: it is
+  # the same project either way, so anything else resolving `k6` should get the
+  # newer one too. The prefixed entries further down are the opposite case, a
+  # different project wearing the same name.
+  #
+  # Each was pinned because nixpkgs trails what aqua had, and dropping aqua
+  # without these would have moved three tools backwards:
+  #
+  #   bunster    0.9.0  -> 0.14.0   (five minors)
+  #   k6         2.0.0  -> 2.1.0
+  #   superfile  1.3.3  -> 1.6.0    (three minors)
+  #
+  # Delete an entry once nixpkgs catches up with the version here; `nix eval
+  # nixpkgs#<name>.version` is the check.
+  bunster = mk {
+    pname = "bunster";
+    version = "0.14.0";
+    url = "https://github.com/yassinebenaid/bunster/releases/download/v0.14.0/bunster_linux-amd64.tar.gz";
+    hash = "sha256-UG0ugXAUTy2OdTYIM2VRlh2fTExz2SFWzLQutjCl34Y=";
+    description = "Compiles shell scripts to static binaries";
+    homepage = "https://github.com/yassinebenaid/bunster";
+  };
+
+  # nixpkgs has 2.2.0 in a later channel, but the pin matches what was actually
+  # installed and running; bumping it is a separate decision from this one.
+  k6 = mk {
+    pname = "k6";
+    version = "2.1.0";
+    subdir = "k6-v2.1.0-linux-amd64";
+    url = "https://github.com/grafana/k6/releases/download/v2.1.0/k6-v2.1.0-linux-amd64.tar.gz";
+    hash = "sha256-KV2WHr/KMG8pXxEzBo3NQDqBcch/OHko9fMLD7z/hYo=";
+    description = "Load testing tool scripted in JavaScript";
+    homepage = "https://k6.io";
+  };
+
+  # Upstream names the binary `spf`, nixpkgs installs it as `superfile`. The
+  # nixpkgs name is kept: that is what is on PATH today and what gets typed.
+  superfile = mk {
+    pname = "superfile";
+    version = "1.6.0";
+    bin = "superfile";
+    file = "spf";
+    subdir = "dist/superfile-linux-v1.6.0-amd64";
+    url = "https://github.com/yorukot/superfile/releases/download/v1.6.0/superfile-linux-v1.6.0-amd64.tar.gz";
+    hash = "sha256-1FsOlQcmKaaqeYOoTu3KnNepiGHmfvkb4UFUluPdowk=";
+    description = "Terminal file manager";
+    homepage = "https://github.com/yorukot/superfile";
+  };
+
   # Prefixed: nixpkgs `qq` is the Tencent QQ messenger.
   jfryy-qq = mk {
     pname = "jfryy-qq";
