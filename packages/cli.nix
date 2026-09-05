@@ -307,5 +307,6 @@
     sheepla-pingu  # ping with a penguin, installs as pingu
     misskey-cli
     chmod-cli
+    lazy-tmux      # tmux session manager; a Claude Code hook calls it
   ];
 }
