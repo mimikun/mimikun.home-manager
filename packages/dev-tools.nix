@@ -268,5 +268,11 @@
     godap
     pkgx
     termkit-gama        # GitHub Actions TUI, installs as gama
+    git-ai              # git checkpoints for AI agents; a Claude Code hook calls it
+
+    # Claude Code's hooks call this one by bare name, so PATH is enough.
+    # nixpkgs carries the same project (rtk-ai/rtk) and is ahead of what was
+    # installed by hand elsewhere, so no overlay entry exists for it.
+    rtk
   ];
 }
