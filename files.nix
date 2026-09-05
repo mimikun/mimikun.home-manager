@@ -9,8 +9,9 @@
     # Store symlinks, not out-of-store ones: the targets are Nix derivations, so
     # they move with each generation and nothing writes to them.
     #
-    # Delete these when settings.json switches to bare command names. The third
-    # tool of the set, rtk, already does that and needs no link.
+    # Delete these when settings.json calls the two by command name alone and
+    # lets PATH resolve them. The third tool of the set, rtk, is already written
+    # that way and needs no link.
     ".local/bin/lazy-tmux".source = "${pkgs.lazy-tmux}/bin/lazy-tmux";
     ".git-ai/bin/git-ai".source = "${pkgs.git-ai}/bin/git-ai";
 
