@@ -1,0 +1,19 @@
+files.nix
+  s_94d3f304653fe5::t_ba9b1f5bddc46c 12-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "0312d946d33020d6b5a6eada431c37aeff7f903f",
+  "prompts": {},
+  "sessions": {
+    "s_94d3f304653fe5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c134ee02-ee19-4a55-9f8a-8b4b60395305",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}
