@@ -31,6 +31,10 @@ task cleanfetch      # git fetch --all --prune --tags --prune-tags
 task pab             # Create a patch-YYYYMMDD branch for changes
 task morning-routine # fetch + delete old patch branches + pull + new patch branch
 task deleb           # Delete all patch* branches
+task apply           # home-manager switch (alias: task switch)
+task update          # nix flake update
+task smas            # Switch to master and pull
+task clean           # Remove build results
 ```
 
 `pab`, `morning-routine` and `deleb` are the repo owner's own manual tools.
@@ -55,25 +59,28 @@ When adding new packages, place them in the appropriate file under `packages/`. 
 - **`home.stateVersion = "24.05"` must never be changed** — this controls migration behavior and changing it can break the activation.
 - `patch-YYYYMMDD` branches belong to the repo owner's own manual workflow (`task pab`, `task morning-routine`). **Agents must not create, reuse, or delete them**, and must not run those tasks.
 - Agents name branches after the Conventional Commits type of the work: `feat/<topic>`, `fix/<topic>`, `docs/<topic>`, `chore/<topic>`, `refactor/<topic>`. Branch off an up-to-date `master`.
-- Currently only works on the `Azusa` machine; `Wakamo` (NixOS/ArchLinux) and `Izuna` hosts are not yet functional.
+- Only ever applied on the `Azusa` machine. `Wakamo` and `Izuna` are untested, not known-broken -- nothing here is host-specific, so don't add host handling on the assumption that they fail. If one of them is the target, build it first (`nix build --no-link .#homeConfigurations.mimikun.activationPackage`) and report what breaks.
 
 ## Commit Standards
 
-When Claude Code performs work that results in a commit, the commit message **must** include a Co-Author trailer identifying the model used:
+When Claude Code performs work that results in a commit, the commit message
+**must** carry a Co-Author trailer naming the model that did the work:
 
-| Model | Trailer |
-|---|---|
-| Claude Opus 4.6 | `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>` |
-| Claude Sonnet 4.6 | `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>` |
-| Claude Haiku 4.5 | `Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>` |
+```
+Co-Authored-By: Claude <model name> <noreply@anthropic.com>
+```
 
-Use the trailer that matches the model currently in use. Example:
+Write the name of the model actually in use. A fixed table of models is
+deliberately not kept here -- it goes stale on every release, and a stale table
+is worse than no table because it reads as authoritative.
+
+Example:
 
 ```bash
 git commit -m "$(cat <<'EOF'
 feat(packages): add ripgrep to cli tools
 
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
 EOF
 )"
 ```
