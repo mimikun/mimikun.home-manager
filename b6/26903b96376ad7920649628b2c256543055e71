@@ -1,0 +1,25 @@
+files.nix
+  s_94d3f304653fe5::t_07c4f4f7731d44 1,4-16
+overlays/prebuilt-github-tools.nix
+  s_94d3f304653fe5::t_a839bdd2d737d1 114-141
+packages/cli.nix
+  s_94d3f304653fe5::t_f649df4df76e7d 310
+packages/dev-tools.nix
+  s_94d3f304653fe5::t_9fddc8243814e8 271-276
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "b626903b96376ad7920649628b2c256543055e71",
+  "prompts": {},
+  "sessions": {
+    "s_94d3f304653fe5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c134ee02-ee19-4a55-9f8a-8b4b60395305",
+        "model": "unknown"
+      },
+      "human_author": "Yuto Tanaka <git@mimikun.dev>"
+    }
+  }
+}
